@@ -23,7 +23,7 @@ async function handle_advance(data) {
     console.log('Received advance raw data ->', JSON.stringify(data));
     const payloadRaw = hexToString(data.payload);
     const payload = JSON.parse(payloadRaw);
-    const requestedAction = payload.action;
+    const requestedAction = payload.method;
     const providedData = payload.data;
 
     const action = routes[requestedAction];
