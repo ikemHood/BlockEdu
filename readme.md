@@ -155,7 +155,7 @@ This section contains examples of how to interact with the dApp and consume its 
 27365222c202264617461223a7b22757365725f6964223a2266396439666435652d396664352d346165352d396664352d666439666435396664356664222c2022636f757273655f6964223a2264386330346137622d653230372d346466622d613164322d633634653964303963396535227d7d --mnemonic 'test test test test test test test test test test test junk'
     ```
 
-* #### add_lesson_to_course
+* #### create_lessons
 
   ```js
   description — adds a lesson to a given course.
@@ -166,7 +166,7 @@ This section contains examples of how to interact with the dApp and consume its 
 
   ```json
   {
-    "method":"add_lesson_to_course", 
+    "method":"create_lessons", 
     "data":{
       "course_id":"d8c04a7b-e207-4dfb-a1d2-c64e9d09c9e5",
       "name":"Lesson 1: Introduction",
@@ -200,50 +200,6 @@ This section contains examples of how to interact with the dApp and consume its 
     cast send 0x59b22D57D4f067708AB0c00552767405926dc768 "addInput(address,bytes)" 0xab7528bb862fb57e8a2bcd567a2e929a0be56a5e 0x7b226d6574686f64223a226164645f6c6573736f6e5f746f5f636f75727365222c202264617461223a7b22636f757273655f6964223a2264386330346137622d653230372d346466622d613164322d633634653964303963396535222c20226e616d65223a224c6573736f6e203a20496e74726f64756374696f6e222c20226d6f64756c65223a224d6f64756c652031222c2022636f6e74656e74223a22546869732069732074686520696e74726f64756374696f6e20746f2074686520636f757273652e227d7d --mnemonic 'test test test test test test test test test test test junk'
     ```
 
-* #### remove_lesson_from_course
-
-  ```js
-  description — removes a lesson from a given course.
-  param data — {course_id: UUID, lesson_id: UUID}
-  ```
-
-  data sample
-
-  ```json
-  {
-    "method":"remove_lesson_from_course",
-    "data":{
-      "course_id":"d8c04a7b-e207-4dfb-a1d2-c64e9d09c9e5",
-      "lesson_id":"9bfa94a2-5b9a-4adf-bd8d-8c496f72e34d"
-    }
-  }
-  ```
-
-  hex sample
-
-  ``` 
-  0x7b226d6574686f64223a2272656d6f76655f6c6573736f6e5f66726f6d5f636f75727365222c202264617461223a7b22636f757273655f6964223a2264386330346137622d653230372d346466622d613164322d633634653964303963396535222c20226c6573736f6e5f6964223a2239626661393461322d356239612d346164662d626438642d386334393666373265333464227d7d
-  ```
-
-  interact
-  - *via `cartesi cli`*
-
-    ```sh
-    cartesi send generic \
-      --dapp=0xab7528bb862fb57e8a2bcd567a2e929a0be56a5e \
-      --chain-id=31337 \
-      --rpc-url=http://127.0.0.1:8545 \
-      --mnemonic-passphrase='test test test test test test test test test test test junk' \
-      --input=0x7b226d6574686f64223a2272656d6f76655f6c6573736f6e5f66726f6d5f636f75727365222c202264617461223a7b22636f757273655f6964223a2264386330346137622d653230372d346466622d613164322d633634653964303963396535222c20226c6573736f6e5f6964223a2239626661393461322d356239612d346164662d626438642d386334393666373265333464227d7d
-    ```
-
-  - *via `cast`*
-
-    ```sh
-    cast send 0x59b22D57D4f067708AB0c00552767405926dc768 "addInput(address,bytes)" 0xab7528bb862fb57e8a2bcd567a2e929a0be56a5e 0x7b226d6574686f64223a2272656d6f76655f6c6573736f6e5f66726f6d5f636f75727365222c202264617461223a7b22636f757273655f6964223a2264386330346137622d653230372d346466622d613164322d633634653964303963396535222c20226c6573736f6e5f6964223a2239626661393461322d356239612d346164662d626438642d386334393666373265333464227d7d --mnemonic 'test test test test test test test test test test test junk'
-    ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
 
